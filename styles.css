@@ -7,20 +7,20 @@ body {
     background-color: lightgrey;  
     color: blue;
     text-align: center;  
-    display: flex; /* 使用Flexbox布局来确保图片和标题在同一行 */
+    display: flex; /* Use Flexbox layout to ensure that images and titles are on the same line */
     padding: 20px;  
   }  
 .left-image {  
-    /* 浮动图片到左侧，但注意这可能会影响文本环绕效果 */  
-    /* 由于使用了Flexbox，这里不需要float */  
-    width: 70px; /* 设置图片宽度为你想要的尺寸 */  
-    height: auto; /* 保持图片的原始比例 */  
-    margin-right: 10px; /* 在图片和标题之间添加一些间距 */  
+    /* Float the image to the left, but be aware that this may affect the text wrapping effect */  
+    /* Due to the use of Flexbox, a float is not required here */  
+    width: 70px; /* Set the image width to the size you want */  
+    height: auto; /* Maintain the original scale of the image */  
+    margin-right: 10px; /* Add some spacing between images and titles */  
 }  
 /* Navigation styles */  
 .topnav {  
-    display: flex; /* 使用 Flexbox 布局 */  
-    justify-content: center; /* 水平居中子元素 */
+    display: flex; /* Using Flexbox Layout */  
+    justify-content: center; /* Horizontal neutron element */
     overflow: hidden;  
     background-color: #333;  
   }  
@@ -49,34 +49,34 @@ body {
 }   
 
 .hero-banner {  
-    /* 添加Hero banner的样式 */  
-    width: 200px; /* 可以根据需求调整 */  
-    height: 200px; /* 根据图像尺寸和页面布局调整 */  
-    background-image: url('A.jpg'); /* 如果图像加载失败，可以使用背景图片作为备选 */  
-    background-size: cover; /* 确保图像覆盖整个容器 */  
-    background-position: center; /* 图像居中 */  
-    text-align: center; /* 如果需要在上面添加文本，使其居中 */  
-    position: relative; /* 如果需要在上面添加覆盖层或文本 */  
+    /* Add style to Hero banner */  
+    width: 200px; /* Can be adjusted according to demand */  
+    height: 200px; /* Adjust based on image size and page layout */  
+    background-image: url('A.jpg'); /* If the image loading fails, a background image can be used as an alternative */  
+    background-size: cover; /* Ensure that the image covers the entire container */  
+    background-position: center; /* Center Image  */  
+    text-align: center; /* If you need to add text above to center it */  
+    position: relative; /* If you need to add an overlay or text on top of it */  
 }  
 
-/* 如果使用<img>标签，则可能需要这样的样式来确保图像正确显示 */  
+/* If using<img>tags, this style may be necessary to ensure that the image is displayed correctly */  
 .hero-banner img {  
-    width: 200px; /* 使图像宽度与容器宽度相同 */  
-    height: auto; /* 保持图像的比例 */  
+    width: 200px; /* Make the image width the same as the container width */  
+    height: auto; /* Maintain the scale of the image */  
 }  
-/* 为容器和列表项设置样式 */  
+/* Set styles for containers and list items */  
 .container {  
     display: flex;  
-    flex-wrap: wrap; /* 如果需要的话，允许换行 */  
-    justify-content: center; /* 水平居中 */  
-    max-width: 100%; /* 或者根据需要设置具体的宽度 */  
+    flex-wrap: wrap; /* If necessary, allow line breaks */  
+    justify-content: center; /* horizontally */  
+    max-width: 100%; /* Or set specific widths as needed */  
     padding: 20px;  
 }  
 .centered-heading {  
-    /* 设置字体大小 */  
-    font-size: 32px; /* 你可以根据需要调整这个值 */    
-    color: red; /* 你可以根据需要调整这个颜色值，例如使用十六进制颜色代码、RGB、HSL等 */  
-    /* 文本水平居中 */  
+    /* Set font size */  
+    font-size: 32px; /* You can adjust this value as needed */    
+    color: red; /* You can adjust this color value as needed, such as using hexadecimal color codes RGB, HSL, etc */  
+    /* Center text horizontally */  
     text-align: center;  
 }
   
@@ -86,58 +86,58 @@ body {
 }  
   
 .product {  
-    /* 添加边框 */  
+    /* Add border */  
     border: 1px solid #ccc;  
-    /* 添加内边距 */  
+    /* Add inner margin */  
     padding: 10px;  
-    /* 添加外边距 */  
+    /* Add outer margin */  
     margin: 0 10px;  
-    /* 使文本居中，如果需要的话 */  
+    /* Center the text, if necessary */  
     text-align: center;  
-    /* 根据需要调整flex属性来设置产品的宽度 */  
+    /* Adjust the flex properties as needed to set the width of the product */  
     flex: 1 0 20%;  
-    /* 添加背景颜色，这里使用浅灰色作为示例 */  
-    background-color: lightseagreen; /* 你可以根据需要调整这个颜色值 */  
+    /* Add background color, use light gray as an example here */  
+    background-color: lightseagreen; /* You can adjust this color value as needed */  
 }
   
 .cart-summary {  
-    /* 添加完整的边框，上、下、左、右都为1px宽，颜色为#ccc */  
+    /* Add a complete border, with a width of 1px on top, bottom, left, and right, and a color of # ccc */  
     border: 1px solid blue;  
-    /* 顶部内边距 */  
+    /* Top inner margin */  
     padding-top: 20px;  
-    /* 添加背景颜色，这里使用浅灰色作为示例 */  
-    background-color: lightgoldenrodyellow; /* 你可以根据需要调整这个颜色值 */  
-    /* 如果需要，也可以添加其他方向的内边距 */  
+    /* Add background color, use light gray as an example here */  
+    background-color: lightgoldenrodyellow; /* You can adjust this color value as needed */  
+    /* If necessary, you can also add inner margins in other directions */  
     padding-bottom: 20px; 
     padding-left: 10px;
     padding-right: 10px; 
-    /* 如果有需要，还可以添加外边距 */  
+    /* If necessary, you can also add outer margins */  
     margin: 10px; 
 }
   
-/* 其他样式... */
+/* Other Styles */
 .container {  
     display: flex;  
-    flex-wrap: wrap; /* 允许项目换行 */  
-    justify-content: space-between; /* 项目之间的空间分布 */  
-    padding: 10px; /* 容器内边距 */  
+    flex-wrap: wrap; /* Allow project line breaks */  
+    justify-content: space-between; /* The spatial distribution between projects */  
+    padding: 10px; /* Inner edge distance of container */  
 }  
   
 .box {  
-    flex: 0 0 calc(33.33% - 20px); /* 宽度为容器的三分之一减去外边距 */  
-    margin-bottom: 20px; /* 底部外边距，用于分隔行 */  
-    padding: 20px; /* 内边距 */  
-    border: 1px solid blue; /* 可选边框 */  
-    background-color: lightgray; /* 你可以根据需要调整这个颜色值 */
-    box-sizing: border-box; /* 确保padding和border不会增加元素的宽度 */  
+    flex: 0 0 calc(33.33% - 20px); /* The width is one-third of the container minus the outer margin */  
+    margin-bottom: 20px; /* Bottom outer margin, used to separate rows */  
+    padding: 20px; /* padding  */  
+    border: 1px solid blue; /* Optional border */  
+    background-color: lightgray; /* You can adjust this color value as needed */
+    box-sizing: border-box; /* Ensure that padding and borders do not increase the width of elements */  
 }  
   
-/* 清除最后一行的底部外边距（可选） */  
+/* Clear the bottom outer margin of the last row (optional) */  
 .container .box:nth-last-child(-n+3):nth-child(3n+1) {  
     margin-bottom: 0;  
 }  
   
-/* 根据需要调整框内的文字样式 */  
+/* Adjust the text style inside the box as needed */  
 .box h2 {  
     text-align: center;  
     font-size: 18px;  
@@ -149,30 +149,30 @@ body {
     line-height: 1.5;  
 }  
   
-/* 如果某个框的内容特别长，你可能需要设置最大高度或溢出处理 */  
+/* If the content of a box is particularly long, you may need to set the maximum height or overflow handling */  
 .box {  
-    max-height: 200px; /* 可选的最大高度 */  
-    overflow-y: auto; /* 如果内容超出最大高度，则显示垂直滚动条 */  
+    max-height: 200px; /* Optional maximum height */  
+    overflow-y: auto; /* If the content exceeds the maximum height, display a vertical scroll bar */  
 }
-/* 联系方式框 */  
+/* Contact information box */  
 .contact-box {  
     display: flex;  
-    justify-content: space-between; /* 让两个div在水平方向上分布开 */
-    flex: 1; /* 占据剩余空间 */  
-    margin-left: 20px; /* 可选，左侧外边距 */  
+    justify-content: space-between; /* Spread two divs horizontally */
+    flex: 1; /* Occupy remaining space */  
+    margin-left: 20px; /* Optional, left outer margin */  
     padding: 20px;  
     border: 1px solid blue;  
-    background-color: lightgray; /* 你可以根据需要调整这个颜色值 */
+    background-color: lightgray; /* You can adjust this color value as needed */
     box-sizing: border-box;  
 }  
 .contact-info, .working-hours {  
-    /* 可以添加一些样式让两个div更美观 */  
-    flex-basis: 50%; /* 让每个div占据大约一半的宽度，但保留一些空间 */  
+    /* You can add some styles to make the two divs more beautiful */  
+    flex-basis: 50%; /* Allow each div to occupy approximately half of its width, but retain some space */  
 }  
 .contact-title {  
-    font-weight: bold; /* 加粗标题 */  
-    display: block; /* 确保标题在新的一行 */  
-    margin-bottom: 5px; /* 标题与下面内容的间距 */  
+    font-weight: bold; /* Bold Title */  
+    display: block; /* Ensure the title is on a new line */  
+    margin-bottom: 5px; /* The spacing between the title and the following content */  
 }
   
 /* Footer styles */  
@@ -183,8 +183,8 @@ footer {
     text-align: center; /* Text alignment */  
   }  
   .footer-content {  
-    margin-top: 20px; /* 或者你想要的任何值 */  
-    /* 其他样式 */  
+    margin-top: 20px; /* Or any value you want */  
+    /* Other styles */  
 }
     
   footer a {  
