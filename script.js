@@ -1,83 +1,83 @@
 //I am Vincent
-// 定义一个空数组用于存储用户信息  
+// Define an empty array to store user information  
 var users = [];  
   
-// 页面初始化函数，假设有相应的页面元素  
+// Page initialization function, assuming there are corresponding page elements  
 function init() {  
-    // 隐藏所有页面  
+    // Hide all pages  
     var pages = document.querySelectorAll('.page');  
     for (var i = 0; i < pages.length; i++) {  
         pages[i].style.display = 'none';  
     }  
       
-    // 显示创建用户页面  
+    // Display Create User Page  
     showPage('createUserPage');  
 }  
   
 /**  
- * 显示指定ID的页面，并隐藏其他所有页面  
+ * Display the page with the specified ID and hide all other pages  
  *  
- * @param {string} pageId - 要显示的页面的ID  
+ * @param {string} pageId - The ID of the page to be displayed  
  */  
 function showPage(pageId) {  
-    // 隐藏所有页面  
+    // Hide all pages  
     var pages = document.querySelectorAll('.page');  
     for (var i = 0; i < pages.length; i++) {  
         pages[i].style.display = 'none';  
     }  
-    // 显示指定ID的页面  
+    // Display the page with the specified ID  
     document.getElementById(pageId).style.display = 'block';  
 }  
   
 /**  
- * 创建新用户并添加到用户数组中，然后跳转到登录页面  
+ * Create a new user and add it to the user array, then jump to the login page  
  */  
 function createUser() {  
-    // 获取用户名和密码输入框的值  
+    // Get the values of the username and password input boxes  
     var username = document.getElementById("username").value;  
     var password = document.getElementById("password").value;  
-    // 将新用户信息添加到用户数组中  
+    // Add new user information to the user array  
     users.push({ username: username, password: password });  
-    // 显示成功创建用户的提示  
+    // Display a prompt for successfully creating a user  
     alert('User ' + username + ' created!');  
-    // 跳转到登录页面  
+    // Jump to login page  
     showPage('loginPage');  
 }  
   
 /**  
- * 验证登录信息，如果正确则跳转到购物页面，否则返回创建用户页面  
+ * Verify login information. If correct, redirect to the shopping page. Otherwise, return to the user creation page  
  */  
 function login() {  
-    // 获取登录页面上的用户名和密码输入框的值  
+    // Obtain the values of the username and password input boxes on the login page  
     var loginUsername = document.getElementById("loginUsername").value;  
     var loginPassword = document.getElementById("loginPassword").value;  
-    var found = false; // 标记是否找到了匹配的用户  
-    // 遍历用户数组以查找匹配的用户名和密码  
+    var found = false; // Mark whether a matching user was found  
+    // Traverse user arrays to find matching usernames and passwords  
     for (var i = 0; i < users.length; i++) {  
         if (users[i].username === loginUsername && users[i].password === loginPassword) {  
-            found = true; // 找到了匹配的用户，设置标记为true  
-            break; // 跳出循环  
+            found = true; // Found a matching user and set it to true  
+            break; // Jump out of loop  
         }  
     }  
-    // 如果找到了匹配的用户，则跳转到购物页面  
+    // If a matching user is found, redirect to the shopping page  
     if (found) {  
       alert('User ' + loginUsername + ' logged in!');
         showPage('shoppingPage');  
     } else {  
-        // 如果没有找到匹配的用户，则返回创建用户页面  
+        // If no matching user is found, return to the Create User page  
         showPage('createUserPage');  
-        // 显示错误消息（如果需要）  
+        // Display error messages (if needed)  
         alert("Invalid username or password. Please try again.");  
     }  
 }  
   
-// 假设页面加载完成后执行init函数  
+// Assuming that the init function is executed after the page loading is completed  
 window.onload = init;  
   
 /**  
- * 计算购物车中的商品总价，并显示在页面上  
+ * Calculate the total price of items in the shopping cart and display it on the page  
  */  
-var cart = {}; // 购物车对象  
+var cart = {}; // Shopping Cart Object  
   
   // script.js  
 document.addEventListener('DOMContentLoaded', function() {  
