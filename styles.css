@@ -54,7 +54,7 @@ body {
     width: 200px; /* Can be adjusted according to demand */  
     height: 200px; /* Adjust based on image size and page layout */  
     background-image: url('A.jpg'); /* If the image loading fails, a background image can be used as an alternative */  
-    background-size: cover; /* Ensure that the image covers the entire container */  
+    background-size: cover; /* Ensure that the image covers the entire container*/  
     background-position: center; /* Center Image  */  
     text-align: center; /* If you need to add text above to center it */  
     position: relative; /* If you need to add an overlay or text on top of it */  
@@ -76,7 +76,7 @@ body {
 .centered-heading {  
     /* Set font size */  
     font-size: 32px; /* You can adjust this value as needed */    
-    color: red; /* You can adjust this color value as needed, such as using hexadecimal color codes RGB, HSL, etc */  
+    color: red; /* You can adjust this color value as needed, such as using hexadecimal color codes, RGB, HSL, etc */  
     /* Center text horizontally */  
     text-align: center;  
 }
@@ -175,7 +175,55 @@ body {
     display: block; /* Ensure the title is on a new line */  
     margin-bottom: 5px; /* The spacing between the title and the following content */  
 }
-  
+.flex-container {  
+    display: flex;  
+    justify-content: space-between; /* Make sub elements evenly distributed on the main axis */  
+  }  
+    
+  .photo-with-description {  
+    /* You can add styles such as width and margins as needed */  
+    flex: 1; /* Elastic width, occupying a portion of the remaining space */  
+  }  
+    
+  .contact-info {  
+    /* You can add styles such as width and margins as needed */  
+    flex: 1; /* Elastic width, occupying a portion of the remaining space */  
+    margin-left: 20px; /* If necessary, you can add the left margin */  
+  }  
+  .flex-container {  
+    display: flex;  
+  }  
+    
+  .contact-info {  
+    /* Assuming width is set here, or space is occupied through the flex attribute */  
+    flex: 1;  
+    padding: 20px;  
+    border: 1px solid #ccc; /* Optional, to see the boundaries clearly */  
+  }  
+    
+  /* form sheet  */  
+  form label {  
+    display: block;  
+    margin-bottom: 5px;  
+  }  
+    
+  form input[type="text"],  
+  form input[type="email"],  
+  form textarea {  
+    width: 100%; /* Make the input box occupy the entire row width */  
+    padding: 5px;  
+    margin-bottom: 10px; /* There is some spacing between each input box */  
+  }  
+    
+  form textarea {  
+    height: 100px; /* Set the height of the text field */  
+  }  
+    
+  /* Submit successful message style */  
+  #successMessage {  
+    color: green;  
+    margin-top: 10px;  
+  }  
 /* Footer styles */  
 footer {  
     background-color: #333; /* Footer background color */  
