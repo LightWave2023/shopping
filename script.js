@@ -10,7 +10,7 @@ function init() {
         pages[i].style.display = 'none';  
     }  
       
-    // Display Create User Page  
+    // Display Create User Page 
     showPage('createUserPage');  
 }  
   
@@ -55,8 +55,8 @@ function login() {
     // Traverse user arrays to find matching usernames and passwords  
     for (var i = 0; i < users.length; i++) {  
         if (users[i].username === loginUsername && users[i].password === loginPassword) {  
-            found = true; // Found a matching user and set it to true  
-            break; // Jump out of loop  
+            found = true; // Found a matching user and set it to true 
+            break; // Jump out of loop
         }  
     }  
     // If a matching user is found, redirect to the shopping page  
@@ -157,3 +157,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calculate the total price initially  
     calculateTotals();  
 });
+document.getElementById('contactForm').addEventListener('submit', function(event) {  
+    event.preventDefault(); // Block the default submission behavior of forms  
+    
+    // Clear previous success messages (if any)  
+    document.getElementById('successMessage').style.display = 'none';  
+    
+    // AJAX requests or other backend processing logic can be added here to send data  
+    // For demonstration purposes, we will only display a success message  
+    
+    // Display success message  
+    document.getElementById('successMessage').style.display = 'block';  
+    
+    // Clear form fields (optional)  
+    this.reset();  
+  });
