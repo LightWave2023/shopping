@@ -43,7 +43,13 @@ function createUser() {
     // Jump to login page  
     showPage('loginPage');  
 }  
+function Login() {  
+    // 显示错误消息（这里假设使用alert函数）  
+    alert('Incorrect username or password！');  
   
+    // 跳转到index.html页面  
+    window.location.href = 'index.html';  
+}  
 /**  
  * Verify login information. If correct, redirect to the shopping page. Otherwise, return to the user creation page  
  */  
@@ -172,3 +178,4 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     // Clear form fields (optional)  
     this.reset();  
   });
+
