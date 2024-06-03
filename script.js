@@ -44,10 +44,10 @@ function createUser() {
     showPage('loginPage');  
 }  
 function Login() {  
-    // 显示错误消息（这里假设使用alert函数）  
+    // Display error message (assuming the alert function is used here）  
     alert('Incorrect username or password！');  
   
-    // 跳转到index.html页面  
+    // Jump to the index.xml page  
     window.location.href = 'index.html';  
 }  
 /**  
