@@ -154,25 +154,34 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   });
   
   function validateForm() {  
-    // Assuming all fields have been filled in, this is just an example. In practice, you should add validation logic  
-    // For example, check if the input box is empty, if the email format is correct, etc 
-    
-    // Display Modal Box  
-    document.getElementById("myModal").style.display = "block";  
-    
-    // Prevent the default submission behavior of forms, as we only display modal boxes and do not actually submit data
-    return false;  
-  }  
-    
-  // Get the close button for the modal box and add a click event to hide the modal box  
-  var span = document.getElementsByClassName("close")[0];  
-  span.onclick = function() {  
-    document.getElementById("myModal").style.display = "none";  
-  }  
-    
-  // When the user clicks on an area outside the modal box, the modal box is also closed  
-  window.onclick = function(event) {  
-    if (event.target == document.getElementById("myModal")) {  
-      document.getElementById("myModal").style.display = "none";  
+    // Get form input  
+    var name = document.getElementById('name').value;  
+    var email = document.getElementById('email').value;  
+    var date = document.getElementById('date').value;  
+    var message = document.getElementById('message').value;  
+    var requirement1 = document.getElementById('requirement1').value;  
+    var requirement2 = document.getElementById('requirement2').value;  
+  
+    // Validation rules (here is just a simple non empty check, you can add more complex validations)  
+    var isValid = true;  
+    if (!name) {  
+        alert('Please enter your name.');  
+        isValid = false;  
     }  
-  }
+    if (!email) {  
+        alert('Please enter your email.');  
+        isValid = false;  
+    }  
+    // You can continue to add validation for other fields
+  
+    // If all fields are valid, return true to allow form submission  
+    // Otherwise, return false to prevent form submission  
+    return isValid;  
+}  
+  
+function showModal() {  
+    // This should be the code for displaying the modal box 
+    // alert('Form submitted successfully!');  
+    console.log('Form submitted successfully!');  
+    //Note: In practical applications, you may want to use more complex modal box libraries, such as Bootstrap Modal, etc  
+}  
