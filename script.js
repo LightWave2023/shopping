@@ -176,4 +176,3 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       document.getElementById("myModal").style.display = "none";  
     }  
   }
-
