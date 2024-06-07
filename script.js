@@ -17,7 +17,7 @@ function createUser() {
   
     // Prompt the user for successful registration and redirect to the login page (if necessary)  
     alert('Registration successful!');  
-    window.location.href = 'login.html'; // Assuming you have a login.HTML as the login page  
+    window.location.href = 'Login.html'; // Assuming you have a login.HTML as the login page  
 }
 function login() {  
     var loginUsername = document.getElementById('loginUsername').value;  
