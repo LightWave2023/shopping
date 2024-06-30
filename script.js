@@ -13,7 +13,7 @@ function createUser() {
     localStorage.setItem('username', username);  
     localStorage.setItem('password', password);  
     // Set expiration time (only storing timestamps here, additional logic is needed to check for expiration)  
-    localStorage.setItem('expiration', new Date().getTime() + 2 * 24 * 60 * 60 * 1000); // Expires in 2 days  
+    localStorage.setItem('expiration', new Date().getTime() + 3 * 24 * 60 * 60 * 1000); // Expires in 3 days  
   
     // Prompt the user for successful registration and redirect to the login page (if necessary)  
     alert('Registration successful!');  
@@ -57,6 +57,34 @@ function login() {
     }  
 }
 
+
+function checkLogin() {  
+    // 假设有一个函数或变量可以检查用户是否已登录  
+    var isLoggedIn = false; // 这里应该根据实际情况来设置  
+  
+    if (!isLoggedIn) {  
+        // 如果用户未登录，则重定向到登录页面，并传递一个参数以便登录后重定向回购物车页面  
+        window.location.href = "Login.html?redirect=shoppingPage";  
+    }  
+}  
+
+// 假设这是登录页面的JavaScript代码片段  
+window.onload = function() {  
+    var redirectUrl = new URLSearchParams(window.location.search).get('redirect');  
+  
+    // 登录按钮或表单的提交事件处理函数中  
+    function onLoginSuccess() {  
+        if (redirectUrl) {  
+            // 如果存在重定向URL，则跳转到该URL  
+            window.location.href = redirectUrl;  
+        } else {  
+            // 否则，跳转到默认页面（可能是主页）  
+            window.location.href = "home.html";  
+        }  
+    }  
+  
+    // ... 其他登录相关的代码 ...  
+};
 var cart = {}; // Shopping Cart Object  
   
   // script.js  
@@ -154,7 +182,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   });
   
   function validateForm() {  
-    // Get form input  
+    // 获取表单输入  
     var name = document.getElementById('name').value;  
     var email = document.getElementById('email').value;  
     var date = document.getElementById('date').value;  
@@ -162,7 +190,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var requirement1 = document.getElementById('requirement1').value;  
     var requirement2 = document.getElementById('requirement2').value;  
   
-    // Validation rules (here is just a simple non empty check, you can add more complex validations)  
+    // 验证规则（这里只是简单的非空检查，你可以添加更复杂的验证）  
     var isValid = true;  
     if (!name) {  
         alert('Please enter your name.');  
@@ -172,16 +200,16 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         alert('Please enter your email.');  
         isValid = false;  
     }  
-    // You can continue to add validation for other fields
+    // 你可以继续添加其他字段的验证...  
   
-    // If all fields are valid, return true to allow form submission  
-    // Otherwise, return false to prevent form submission  
+    // 如果所有字段都有效，返回true以允许表单提交  
+    // 否则返回false阻止表单提交  
     return isValid;  
 }  
   
 function showModal() {  
-    // This should be the code for displaying the modal box 
-    // alert('Form submitted successfully!');  
+    // 这里应该是显示模态框的代码  
+    // 例如：alert('Form submitted successfully!');  
     console.log('Form submitted successfully!');  
-    //Note: In practical applications, you may want to use more complex modal box libraries, such as Bootstrap Modal, etc  
+    // 注意：在实际应用中，你可能希望使用更复杂的模态框库，如Bootstrap Modal等  
 }  
