@@ -17,74 +17,51 @@ function createUser() {
   
     // Prompt the user for successful registration and redirect to the login page (if necessary)  
     alert('Registration successful!');  
-    window.location.href = 'Login.html'; // Assuming you have a login.HTML as the login page  
+    window.location.href = 'shopping.html'; // Assuming you have a login.HTML as the login page  
 }
 function login() {  
     var loginUsername = document.getElementById('loginUsername').value;  
     var loginPassword = document.getElementById('loginPassword').value;  
   
-    // Attempt to obtain username and password from localStorage 
+    // Attempt to obtain username and password from localStorage  
     var storedUsername = localStorage.getItem('username');  
     var storedPassword = localStorage.getItem('password');  
-    var expiration = localStorage.getItem('expiration');  
+    // Assuming that the logic of the expiration has already been processed on the server side, we will not check it again here  
   
-    // Check if the username and password have been set and have not expired 
-    if (expiration && new Date().getTime() < parseInt(expiration)) {  
-        // If the user has not entered a username and password, and the username and password are remembered and have not expired, attempt automatic login  
-        if (loginUsername === '' && loginPassword === '') {  
-            if (storedUsername && storedPassword) {  
-                // This is just a simulation of the client, and there will be server verification in real applications  
-                alert('Auto login successful!');  
-                // Jump to shopping page  
-                window.location.href = 'shopping.html';  
-                return;  
-            }  
+    // If the user has not entered their username and password and has already remembered them (assuming they are always valid)  
+    if (loginUsername === '' && loginPassword === '') {  
+        if (storedUsername && storedPassword) {  
+            // This is just a simulation of the client, and there will be server validation in practical applications  
+            alert('Auto login successful!');  
+            // Hide login container and display shopping cart page  
+            hideLoginShowShopping();  
+            return;  
         }  
     }  
   
-    // The username or password is empty, expired, or manually entered by the user  
+    // The username or password is empty, or manually entered by the user  
     if (loginUsername !== '' && loginPassword !== '') {  
-        // The username and password have been entered, perform login verification  
+        // The username and password have been entered for login verification (this is only a simulation)  
         if (loginUsername === storedUsername && loginPassword === storedPassword) {  
             alert('Login successful!');  
-            // Jump to shopping page  
-            window.location.href = 'shopping.html';  
+            // Hide login container and display shopping cart page 
+            hideLoginShowShopping();  
         } else {  
-            alert('Incorrect username or password!');  
+            alert('The username or password is incorrect!');  
         }  
     } else {  
-        alert('Please fill in both username and password.');  
+        alert('Please provide your username and password.');  
+    }  
+  
+    // Auxiliary function: Hide login container and display shopping cart page  
+    function hideLoginShowShopping() {  
+        var loginContainer = document.getElementById('loginContainer');  
+        var shoppingPage = document.getElementById('shoppingPage');  
+        loginContainer.style.display = 'none';  
+        shoppingPage.style.display = 'block';  
     }  
 }
 
-
-function checkLogin() {  
-    // 假设有一个函数或变量可以检查用户是否已登录  
-    var isLoggedIn = false; // 这里应该根据实际情况来设置  
-  
-    if (!isLoggedIn) {  
-        // 如果用户未登录，则重定向到登录页面，并传递一个参数以便登录后重定向回购物车页面  
-        window.location.href = "Login.html?redirect=shoppingPage";  
-    }  
-}  
-
-// 假设这是登录页面的JavaScript代码片段  
-window.onload = function() {  
-    var redirectUrl = new URLSearchParams(window.location.search).get('redirect');  
-  
-    // 登录按钮或表单的提交事件处理函数中  
-    function onLoginSuccess() {  
-        if (redirectUrl) {  
-            // 如果存在重定向URL，则跳转到该URL  
-            window.location.href = redirectUrl;  
-        } else {  
-            // 否则，跳转到默认页面（可能是主页）  
-            window.location.href = "home.html";  
-        }  
-    }  
-  
-    // ... 其他登录相关的代码 ...  
-};
 var cart = {}; // Shopping Cart Object  
   
   // script.js  
@@ -190,7 +167,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var requirement1 = document.getElementById('requirement1').value;  
     var requirement2 = document.getElementById('requirement2').value;  
   
-    // 验证规则（这里只是简单的非空检查，你可以添加更复杂的验证）  
+    // Validation rules (here is just a simple non empty check, you can add more complex validations)  
     var isValid = true;  
     if (!name) {  
         alert('Please enter your name.');  
@@ -200,16 +177,16 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         alert('Please enter your email.');  
         isValid = false;  
     }  
-    // 你可以继续添加其他字段的验证...  
+    // You can continue to add validation for other fields
   
-    // 如果所有字段都有效，返回true以允许表单提交  
-    // 否则返回false阻止表单提交  
+    // If all fields are valid, return true to allow form submission  
+    // Otherwise, return false to prevent form submission 
     return isValid;  
 }  
   
 function showModal() {  
-    // 这里应该是显示模态框的代码  
-    // 例如：alert('Form submitted successfully!');  
+    // This should be the code for displaying the modal box 
+    // alert('Form submitted successfully!');  
     console.log('Form submitted successfully!');  
-    // 注意：在实际应用中，你可能希望使用更复杂的模态框库，如Bootstrap Modal等  
+    // Note: In practical applications, you may want to use more complex modal box libraries, such as Bootstrap Modal, etc 
 }  
