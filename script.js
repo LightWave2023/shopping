@@ -62,6 +62,22 @@ function login() {
     }  
 }
 
+document.addEventListener('DOMContentLoaded', function() {  
+    var logoutButton = document.getElementById('logoutButton');  
+  
+    logoutButton.addEventListener('click', function() {  
+        // Delete username variable from localStorage  
+        localStorage.removeItem('username');  
+          
+        // You can add some additional logic here, such as prompting the user to log out  
+        alert('Logged out, the username variable in localStorage has been deleted.');  
+    });  
+  
+    //Assuming you have set the username variable in localStorage
+    //Just for demonstration purposes, we are setting it up here
+    // localStorage.setItem('username', 'JohnDoe');  
+});
+
 var cart = {}; // Shopping Cart Object  
   
   // script.js  
